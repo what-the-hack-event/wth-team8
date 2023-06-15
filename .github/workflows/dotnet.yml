@@ -53,3 +53,13 @@ jobs:
 
       - name: Docker push 
         run: docker push $registryName/$repositoryName:$tag
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'wtht8devops-dev'
+          publish-profile: ${{ secrets.DEV_WEBAPP_CREDENTIALS }}
+          images: '$registryName/$repositoryName:$tag'
