@@ -2,7 +2,8 @@ name: WTH Team 8 First Workflow
 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   Job-1-What-The-Hack-Team8:
