@@ -1,6 +1,7 @@
 # wth-team8
 
-Azure:
+Azure: portal.azure.com
+
 
 
 User: wth-team8@jufranzemsfthotmailcom.onmicrosoft.com
