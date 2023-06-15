@@ -1,0 +1,20 @@
+name: WTH Team 8 Deploy Workflow
+
+on:
+  workflow_dispatch:
+
+run-name: ${{ github.actor }} IaC Deploy 🚀
+
+jobs:
+  Job-1-What-The-Hack-Team8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: 69c46380-11fc-4928-8685-6308b12a57e2
+          resourceGroupName: wth-team8-rg
+          template: ${GITHUB_WORKSPACE}/ARM-Templates/container-webapp-template.json
