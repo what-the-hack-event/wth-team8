@@ -9,6 +9,8 @@ jobs:
   Job-1-What-The-Hack-Team8:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
