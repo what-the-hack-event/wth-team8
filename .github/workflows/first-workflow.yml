@@ -10,3 +10,13 @@ jobs:
     steps:
       - run: echo "🎉 Step 1."
       - run: echo "🎉 Step 2."
+
+  Job-2-cowsays:
+    name: This job is Cowsays
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ship it
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'ship ship ship!'
+        color: 'red'
