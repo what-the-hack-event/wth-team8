@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "wthdevops-dev",
+            "defaultValue": "wtht8devops-dev",
             "type": "String"
         },
         "hostingPlanName": {
-            "defaultValue": "wthdevops-asp",
+            "defaultValue": "wtht8devops-asp",
             "type": "String"
         },
         "appInsightsLocation": {
@@ -15,7 +15,7 @@
             "type": "String"
         },
         "appInsightsName": {
-            "defaultValue": "wthdevops-ai",
+            "defaultValue": "wtht8devops-ai",
             "type": "String"
         },        
         "sku": {
@@ -23,11 +23,11 @@
             "type": "String"
         },
         "registryName": {
-            "defaultValue": "wthdevopsreg",
+            "defaultValue": "wtht8devopsreg",
             "type": "String"
         },
         "imageName": {
-            "defaultValue": "wthdevopsimage",
+            "defaultValue": "wtht8devopsimage",
             "type":"String"
         },
         "registryLocation": {
