@@ -17,4 +17,7 @@ jobs:
         with:
           subscriptionId: 69c46380-11fc-4928-8685-6308b12a57e2
           resourceGroupName: wth-team8-rg
-          template: ../../ARM-Templates/container-webapp-template.json
+          template: /workspaces/wth-team8/ARM-Templates/container-webapp-template.json
+
+          
+          
