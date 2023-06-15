@@ -1,10 +1,23 @@
-name: GitHub Actions First_workflow
+name: WTH Team 8 First Workflow
+
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: []
+
+on: [push]
+
 jobs:
-  Job-1 wth_Team8
-     runs-on: ubuntu-latest
+  Job-1-What-The-Hack-Team8:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 Step1."
-      - run: echo "🐧 Step1."
-      
+      - run: echo "🎉 Step 1."
+      - run: echo "🎉 Step 2."
+
+  Job-2-cowsays:
+    name: This job is Cowsays
+    runs-on: ubuntu-latest
+    needs: [Job-1-What-The-Hack-Team8]
+    steps:
+    - name: Ship it
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'I waited for Job1 and What the Hack!'
+        color: 'yellow'
