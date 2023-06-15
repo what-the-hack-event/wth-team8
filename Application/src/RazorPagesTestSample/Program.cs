@@ -11,7 +11,7 @@ namespace RazorPagesTestSample
     public class Program
     {
         //New Change here!!!
-        public static void Main(string[] args)
+        publica static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
 
