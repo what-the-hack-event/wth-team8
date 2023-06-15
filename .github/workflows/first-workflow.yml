@@ -1,0 +1,10 @@
+name: GitHub Actions First_workflow
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: []
+jobs:
+  Job-1 wth_Team8
+     runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 Step1."
+      - run: echo "🐧 Step1."
+      
