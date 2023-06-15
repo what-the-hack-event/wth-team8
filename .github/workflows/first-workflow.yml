@@ -14,9 +14,10 @@ jobs:
   Job-2-cowsays:
     name: This job is Cowsays
     runs-on: ubuntu-latest
+    needs: [Job-1-What-The-Hack-Team8]
     steps:
     - name: Ship it
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: 'What the Hack!'
+        text: 'I waited for Job1 and What the Hack!'
         color: 'yellow'
