@@ -31,6 +31,7 @@ jobs:
     - name: Deploy ARM template
       uses: azure/arm-deploy@v1
       with:
+
         scope: resourcegroup
         resourceGroupName: ${{ vars.WTH_RESOURCE_GROUP}}
-        template: '${working_directory}/InfrastructureAsCode/main.json'
+        template: '${{ github.workspace }}/InfrastructureAsCode/main.json'
