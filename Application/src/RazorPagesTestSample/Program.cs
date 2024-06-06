@@ -12,6 +12,7 @@ namespace RazorPagesTestSample
     {
         public static void Main(string[] args)
         {
+            //Workflow test comment
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
