@@ -20,7 +20,8 @@ env:
     GH_TOKEN: ${{ secrets.GH_TOKEN }}
     ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
     ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
-
+    AZURE_WEBAPP_NAME: mhxwf75axzxru
+    ENVIRONMENT: dev
     registryName: mhxwf75axzxruwthreg.azurecr.io
     repositoryName: wth/dotnetcoreapp
     dockerFolderPath: Application/src/RazorPagesTestSample
@@ -63,4 +64,12 @@ jobs:
     - name: Docker Push
       run: docker push $registryName/$repositoryName:$tag
 
-    
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, dockerJob]
+    steps:
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }} + '-' + ${{ env.ENVIRONMENT }}
+        images: $registryName/$repositoryName:$tag
+       
