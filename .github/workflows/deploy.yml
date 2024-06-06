@@ -26,7 +26,7 @@ jobs:
     - name: Compile Bicep to ARM
       run: |
         working_directory=$GITHUB_WORKSPACE
-        bicep build ${working_directory}/InfrastructureAsCode/main.bicep environment=prod
+        bicep build ${working_directory}/InfrastructureAsCode/main.bicep 
 
     - name: Deploy ARM template
       uses: azure/arm-deploy@v1
@@ -35,3 +35,4 @@ jobs:
         scope: resourcegroup
         resourceGroupName: ${{ vars.WTH_RESOURCE_GROUP}}
         template: '${{ github.workspace }}/InfrastructureAsCode/main.json'
+        parameters: environment=prod
