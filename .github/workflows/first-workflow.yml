@@ -20,6 +20,7 @@ jobs:
 
         steps:
         - name: Cowsay Step
-          uses: actions/cowsay@master
+          uses: mscoutermarsh/cowsays-action@master
           with:
-            text: "Hello from job2"
+            text: 'ship ship ship!'
+            color: 'red'
