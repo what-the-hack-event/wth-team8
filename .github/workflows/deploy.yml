@@ -2,6 +2,15 @@ name: Deploy Bicep Template
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'dev'
+        options:
+          - 'dev'
+          - 'test'
+          - 'prod'
   
 jobs:
   build-and-deploy:
@@ -35,4 +44,4 @@ jobs:
         scope: resourcegroup
         resourceGroupName: ${{ vars.WTH_RESOURCE_GROUP}}
         template: '${{ github.workspace }}/InfrastructureAsCode/main.json'
-        parameters: environment=test
+        parameters: environment=${{ inputs.environment }}
