@@ -18,6 +18,9 @@ on:
   
 env:
     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+    ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+    
     registryName: mhxwf75axzxruwthreg.azurecr.io
     repositoryName: wth/dotnetcoreapp
     dockerFolderPath: Application/src/RazorPagesTestSample
@@ -54,7 +57,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker Login
-      run: docker login $registryName -u ${secrets.ACR_USERNAME} -P ${secrets.ACR_PASSWORD}
+      run: docker login $registryName -u $ACR_USERNAME -P $ACR_PASSWORD
     - name: Docker Build
       run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
     - name: Docker Push
