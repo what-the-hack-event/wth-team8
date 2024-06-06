@@ -1,0 +1,16 @@
+# create a github action workflow with two steps within it. The steps should be simple CLI commands to echo out step1 and step2 as applicable.
+name: github-workflow-1
+
+on: 
+    workflow_dispatch:
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Step 1
+          run: echo "This is Step 1"
+
+        - name: Step 2
+          run: echo "This is Step 2"
