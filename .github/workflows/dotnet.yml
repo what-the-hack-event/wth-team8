@@ -4,6 +4,7 @@
 name: .NET
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
     paths: 
@@ -11,8 +12,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths: 
-      - 'Application/**'
-  
+      - 'Application/**'  
   
 
 jobs:
@@ -33,3 +33,9 @@ jobs:
       run: dotnet build ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
     - name: Test
       run: dotnet test ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
+    - name: Failing step
+      id: demo
+      run: exit 1
+    - name: failed job notification
+      if: failure()
+      run: echo "The job failed"
