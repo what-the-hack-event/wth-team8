@@ -15,7 +15,7 @@ jobs:
 
         steps:
         - name: Step 1
-          run: echo "$(REPO_SECRET)"
+          run: echo "$REPO_SECRET"
 
         - name: Step 2
           run: echo "This is Step 2"
