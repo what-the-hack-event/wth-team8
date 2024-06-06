@@ -35,4 +35,4 @@ jobs:
         scope: resourcegroup
         resourceGroupName: ${{ vars.WTH_RESOURCE_GROUP}}
         template: '${{ github.workspace }}/InfrastructureAsCode/main.json'
-        parameters: environment=prod
+        parameters: environment=test
